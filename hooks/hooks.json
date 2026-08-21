@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/pretool.sh\"",
+            "timeout": 5,
+            "statusMessage": "Checking prompt comments..."
+          }
+        ]
+      }
+    ]
+  }
+}

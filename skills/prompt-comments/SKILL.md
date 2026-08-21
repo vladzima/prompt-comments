@@ -1,15 +1,18 @@
 ---
 name: prompt-comments
 description: >
-  Use when adding, editing, deleting, rewriting, or reviewing instructions in
-  AGENTS.md, CLAUDE.md, copilot-instructions.md, GEMINI.md, SKILL.md, prompt
-  notes, or other agent instruction files; when those files keep growing or
-  get wholesale-rewritten; or when the user mentions prompt comments,
-  catastrophic remembering, instruction rationale, or pruning agent context.
+  You MUST use this skill whenever you add, edit, delete, rewrite, or review
+  durable agent instructions — including AGENTS.md, CLAUDE.md, GEMINI.md,
+  copilot-instructions.md, SKILL.md, prompt notes, and other inherited agent
+  rules. Load it even if the user did not mention those files. Agents add
+  these rules as a side effect; the user will not ask. Also use when
+  instruction files keep growing, get wholesale-rewritten, or when the user
+  mentions prompt comments, catastrophic remembering, or pruning agent
+  context.
 license: MIT
 metadata:
   author: Vlad Arbatov
-  version: "0.1.0"
+  version: "0.2.0"
   paper: "arXiv:2608.11095"
 ---
 
@@ -19,14 +22,18 @@ Agent instruction files grow because adding a rule is cheap and deleting it
 is a guess once the *why* is gone. Write the why at add time. Do not
 auto-delete from it.
 
+This is write-time protocol. It applies whenever *you* change a durable
+instruction file. The user will not ask. Do not wait for them to mention
+AGENTS.md / CLAUDE.md / SKILL.md.
+
 Paper: Chakrabarti, *Why Does CLAUDE.md Keep Growing?* ([arXiv:2608.11095](https://arxiv.org/abs/2608.11095)).
-Numbers and caveats: [references/paper.md](references/paper.md)
+Evidence: [references/paper.md](references/paper.md)
 
-## When this applies
+## Files this covers
 
-Durable instructions the next agent or maintainer will inherit:
-`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `copilot-instructions.md`,
-`SKILL.md`, prompt notes, always-on agent rules.
+Durable instructions the next agent will inherit: `AGENTS.md`, `CLAUDE.md`,
+`GEMINI.md`, `copilot-instructions.md`, `SKILL.md`, prompt notes, always-on
+agent rules, and harness prompt addendums.
 
 Not: one-off chat directions. Not: ordinary code comments.
 
@@ -45,8 +52,7 @@ Use bun, not npm.
 # recurred: 2
 ```
 
-Required: **failed**, **outcome**, **recurred**. Optional: **try**, and
-what already failed.
+Required: **failed**, **outcome**, **recurred**. Optional: **try**.
 
 If this file is also the executor prompt, one line:
 
@@ -80,17 +86,9 @@ A wholesale rewrite resets size, not the process. Files refill within a
 few commits. If you rewrite, port every comment. A clean uncommented file
 will grow again.
 
-## Review
-
-When asked to shrink or audit an instruction file:
-
-1. List uncommented instructions.
-2. Restore why from git/PRs where cheap.
-3. Propose deletions only where why is recovered and the failure is gone.
-4. Ask before deleting.
-
 ## Do not
 
+- Wait for the user to mention the instruction file.
 - Put rationale in the instruction text (that is how files bloat).
 - Add comment-shaped filler ("important", "always", "the user prefers").
 - Treat age as proof a rule is stale, or as proof it is still true.

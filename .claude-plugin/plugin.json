@@ -1,0 +1,14 @@
+{
+  "name": "prompt-comments",
+  "version": "0.2.0",
+  "description": "Write-time comments on AGENTS.md / CLAUDE.md so instruction files stop growing without bound.",
+  "author": {
+    "name": "Vlad Arbatov",
+    "url": "https://github.com/vladzima"
+  },
+  "homepage": "https://github.com/vladzima/prompt-comments",
+  "repository": "https://github.com/vladzima/prompt-comments",
+  "license": "MIT",
+  "keywords": ["agents-md", "claude-md", "prompt-engineering", "skills"],
+  "hooks": "./hooks/hooks.json"
+}

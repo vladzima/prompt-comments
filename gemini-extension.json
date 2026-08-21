@@ -1,0 +1,6 @@
+{
+  "name": "prompt-comments",
+  "version": "0.2.0",
+  "description": "Write-time comments on AGENTS.md / CLAUDE.md so instruction files stop growing without bound.",
+  "contextFileName": "AGENTS.md"
+}

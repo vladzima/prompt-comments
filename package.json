@@ -1,7 +1,7 @@
 {
   "name": "prompt-comments",
-  "version": "0.1.0",
-  "description": "Stop agent instruction files from growing without bound. Comment the why at write time.",
+  "version": "0.2.0",
+  "description": "Write-time comments on AGENTS.md / CLAUDE.md so instruction files stop growing without bound.",
   "license": "MIT",
   "homepage": "https://github.com/vladzima/prompt-comments",
   "repository": {
@@ -9,7 +9,11 @@
     "url": "git+https://github.com/vladzima/prompt-comments.git"
   },
   "keywords": ["pi-package", "skills", "agentskills"],
+  "scripts": {
+    "test": "python3 tests/test_gate.py"
+  },
   "pi": {
-    "skills": ["./skills"]
+    "skills": ["./skills"],
+    "extensions": ["./extensions/prompt-comments.ts"]
   }
 }
