@@ -1,0 +1,15 @@
+{
+  "name": "prompt-comments",
+  "version": "0.1.0",
+  "description": "Stop agent instruction files from growing without bound. Comment the why at write time.",
+  "license": "MIT",
+  "homepage": "https://github.com/vladzima/prompt-comments",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladzima/prompt-comments.git"
+  },
+  "keywords": ["pi-package", "skills", "agentskills"],
+  "pi": {
+    "skills": ["./skills"]
+  }
+}
