@@ -32,11 +32,13 @@ Comments that work name the failure, a hypothesis, and the **outcome**
 (plus how often it recurred). Comment-shaped noise does nothing. A
 story with no outcome is worse than no comment.
 
-Lab cuts of “99% excess size” and “+23% instruction-following” are not
-targets: those covers were 2–3 instructions, not 39. Direction is the
-useful part. Do not auto-delete from a recovered why — their protocol
-emptied about 1 prompt in 8, and the uncommented arm scored higher on
-those worlds. Keep a human in the deletion path.
+![Excess prompt size over 51 maintenance steps: no comments and comment-shaped noise grow past +200%; comments with latent reasoning stay near the optimal size.](assets/excess-size.png)
+
+*From Chakrabarti, Fig. 1(a). Uncommented prompts ratchet; informative comments settle near the minimum cover. Lab covers were 2–3 instructions, not the real median of 39 — direction holds, the % is not a target.*
+
+Do not auto-delete from a recovered why — their protocol emptied about
+1 prompt in 8, and the uncommented arm scored higher on those worlds.
+Keep a human in the deletion path.
 
 ## How a user uses this
 
