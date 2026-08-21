@@ -1,6 +1,6 @@
 {
   "name": "prompt-comments",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Write-time comments on AGENTS.md / CLAUDE.md so instruction files stop growing without bound.",
   "license": "MIT",
   "homepage": "https://github.com/vladzima/prompt-comments",
@@ -13,7 +13,7 @@
     "test": "python3 tests/test_gate.py"
   },
   "pi": {
-    "skills": ["./skills"],
+    "skills": [],
     "extensions": ["./extensions/prompt-comments.ts"]
   }
 }

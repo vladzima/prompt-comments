@@ -43,11 +43,15 @@ claude plugin install prompt-comments@prompt-comments
 
 ### Prime Agent
 
+Prime already loads `~/.agents/skills/`, so the skills.sh install above is
+the skill. The Prime package is **extension-only** (the write-time gate).
+Do not expect it to ship a second `SKILL.md`; that collides with the
+skills.sh copy.
+
 ```sh
+npx skills add vladzima/prompt-comments -g --all
 prime-agent package install https://github.com/vladzima/prompt-comments
 ```
-
-Loads the skill *and* the write-time extension.
 
 ### Manual
 
