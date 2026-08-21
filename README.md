@@ -9,6 +9,35 @@ when the user never mentioned the file.
 Based on Chakrabarti, [*Why Does CLAUDE.md Keep Growing?*](https://arxiv.org/abs/2608.11095)
 (arXiv:2608.11095).
 
+## Why these files grow
+
+Across 1,867 public repos and 247k instruction lifetimes, agent READMEs
+(`AGENTS.md`, `CLAUDE.md`, `copilot-instructions.md`) more than triple
+over their life (+226%). Median file ends at 39 instructions. Net +4.9
+instructions per commit. Deletion gets *less* likely as a rule ages
+(log-hazard −0.032/commit) and as more authors touch the file.
+
+That is not staleness (old rules would die more) and not only fragile
+content dying young. The instruction stays; the *why* decays. The paper
+calls this **catastrophic remembering**. Adding is always cheap.
+Deleting without the original rationale is a guess — a safe audit is
+exponential in prompt size; writing the why at add time is O(1).
+
+~77% of instruction deaths are wholesale rewrites. Size drops, then
+growth resumes faster (4.1% → 4.9% per commit). A clean file with no
+comments refills. Stronger models make this worse: they add more
+insurance rules.
+
+Comments that work name the failure, a hypothesis, and the **outcome**
+(plus how often it recurred). Comment-shaped noise does nothing. A
+story with no outcome is worse than no comment.
+
+Lab cuts of “99% excess size” and “+23% instruction-following” are not
+targets: those covers were 2–3 instructions, not 39. Direction is the
+useful part. Do not auto-delete from a recovered why — their protocol
+emptied about 1 prompt in 8, and the uncommented arm scored higher on
+those worlds. Keep a human in the deletion path.
+
 ## How a user uses this
 
 They install it. Then they keep working. They do not invoke a slash command
@@ -73,11 +102,6 @@ Use bun, not npm.
 
 No named failure → do not add the rule. No outcome → do not add the comment.
 Deletes stay manual. Wholesale rewrites must port comments.
-
-## Not included
-
-No auto-pruner. The paper's warning: writing a comment is safe; acting on one
-to delete is not. Keep a human in the deletion path.
 
 ## License
 
